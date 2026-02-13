@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images" # Where photos of the box will live
+public_folder: "/images"
+
+collections:
+  - name: "verses"
+    label: "Verses"
+    folder: "verses" # This creates a new folder for your poems
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Poem Text", name: "body", widget: "markdown" }
