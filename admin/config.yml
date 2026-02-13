@@ -2,6 +2,9 @@ backend:
   name: git-gateway
   branch: main
 
+# This line helps the dashboard find your home base
+site_url: https://rococo-bombalone-83c92b.netlify.app
+
 media_folder: "images"
 public_folder: "/images"
 
