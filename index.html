@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidewalk Verses | Shorewood, WI Poetry Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Body adjusted for better full-screen width */
+        body { 
+            font-family: 'Georgia', serif; 
+            line-height: 1.6; 
+            background: #fdfaf6; 
+            color: #333; 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 20px; 
+        }
+        
+        h1, h2, h3, .sidebar-title, .archive-tree, button, .section-label, .subtitle { 
+            font-family: 'Roboto', sans-serif; 
+        }
+
+        header { text-align: center; padding: 40px 0; border-bottom: 2px solid #2c3e50; margin-bottom: 40px; }
+        h1 { font-weight: 700; font-size: 3rem; margin: 0; letter-spacing: -1px; }
+        .subtitle { color: #666; margin-top: 5px; font-size: 1.1rem; }
+
+        /* FLEXBOX SIDE-BY-SIDE SECTION */
+        .top-content { 
+            display: flex; 
+            flex-wrap: wrap; /* Allows stacking on mobile */
+            gap: 30px; 
+            margin-bottom: 50px; 
+            align-items: stretch; /* Makes both boxes equal height */
+        }
+        
+        .box-photo { 
+            flex: 1 1 450px; /* Grows/Shrinks, base width 450px */
+            min-height: 400px;
+            background: #ddd; 
+            border-radius: 4px;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            background-size: cover; 
+            background-position: center;
+        }
+
+        .current-display { 
+            flex: 1 1 400px; /* Grows/Shrinks, base width 400px */
+            background: white; 
+            padding: 40px; 
+            border: 1px solid #eee; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-label { color: #95a5a6; font-size: 0.8rem; letter-spacing: 3px; font-weight: 700; margin-bottom: 15px; }
+
+        /* BOTTOM SECTION: Two Columns */
+        .bottom-grid { 
+            display: grid; 
+            grid-template-columns: 1.5fr 1fr; 
+            gap: 60px; 
+            border-top: 1px solid #eee; 
+            padding-top: 40px; 
+        }
+
+        /* Message Poet (Left) */
+        .interaction { background: #f4f1ed; padding: 30px; border-radius: 4px; align-self: start; }
+        .interaction h3 { margin-top: 0; color: #2c3e50; }
+        textarea { width: 100%; height: 100px; margin: 15px 0; padding: 12px; border: 1px solid #ccc; border-radius: 3px; box-sizing: border-box; font-family: sans-serif; }
+        button { background: #2c3e50; color: white; border: none; padding: 15px; width: 100%; cursor: pointer; font-weight: 700; border-radius: 3px; transition: 0.2s; }
+        button:hover { background: #34495e; }
+
+        /* Poetry Archive (Right) */
+        .sidebar-title { font-size: 1.1rem; font-weight: 700; color: #2c3e50; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        .archive-tree { font-size: 0.95rem; list-style: none; padding: 0; }
+        .tree-item { margin: 12px 0; }
+        .tree-toggle { cursor: pointer; user-select: none; color: #555; font-weight: 500; }
+        .tree-toggle:hover { color: #000; }
+        .tree-toggle::before { content: "▶ "; font-size: 0.7em; color: #bbb; margin-right: 8px; }
+        .open > .tree-toggle::before { content: "▼ "; color: #2c3e50; }
+        
+        .nested { display: none; list-style: none; padding-left: 20px; border-left: 1px solid #e0dbd5; margin-top: 8px; }
+        .open > .nested { display: block; }
+        
+        .poem-link { text-decoration: none; color: #8b4513; display: block; margin: 8px 0; font-family: 'Georgia', serif; font-style: italic; }
+        .poem-link:hover { text-decoration: underline; }
+
+        footer { text-align: center; margin: 80px 0 40px; font-family: 'Roboto', sans-serif; font-size: 0.8rem; color: #999; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Sidewalk Verses</h1>
+    <div class="subtitle">A Neighborhood Poetry Project | Shorewood, WI</div>
+</header>
+
+<div class="container">
+    
+    <div class="top-content">
+        <div class="box-photo">
+            <span style="color: #999; font-family: 'Roboto', sans-serif;">[Photo of Your Shorewood Poetry Box]</span>
+        </div>
+        
+        <section class="current-display">
+            <div class="section-label">NOW IN THE BOX</div>
+            <p style="color:#95a5a6; font-size: 0.9rem; font-family: 'Roboto', sans-serif; margin-bottom: 20px;">Posted: April 1, 2026</p>
+            <h2 style="margin-top: 0; font-family: 'Georgia', serif; font-style: italic; font-size: 2.2rem;">April on the Lake</h2>
+            <p style="font-size: 1.25rem;">
+                The winter ice begins to fray,<br>
+                Along the curve of Atwater's bay.<br>
+                The Shorewood wind carries a chill,<br>
+                While spring climbs up the Oakland hill.
+            </p>
+        </section>
+    </div>
+
+    <div class="bottom-grid">
+        
+        <section class="interaction">
+            <h3>Message the Poet</h3>
+            <p style="font-family: 'Roboto', sans-serif; font-size: 0.9rem; color: #666;">Suggest a theme or share what you think about this week's verse.</p>
+            <form action="https://formspree.io/f/your@email.com" method="POST">
+                <textarea name="message" placeholder="Type your message here..."></textarea>
+                <button type="submit">SEND TO THE BOX</button>
+            </form>
+        </section>
+
+        <aside>
+            <div class="sidebar-title">Poetry Archive</div>
+            <ul class="archive-tree">
+                
+                <li class="tree-item open">
+                    <div class="tree-toggle" onclick="toggleTree(this)">2026 (2)</div>
+                    <ul class="nested">
+                        <li class="tree-item">
+                            <div class="tree-toggle" onclick="toggleTree(this)">April (1)</div>
+                            <ul class="nested">
+                                <li><a href="#" class="poem-link">April on the Lake</a></li>
+                            </ul>
+                        </li>
+                        <li class="tree-item">
+                            <div class="tree-toggle" onclick="toggleTree(this)">March (1)</div>
+                            <ul class="nested">
+                                <li><a href="#" class="poem-link">The Thaw</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="tree-item">
+                    <div class="tree-toggle" onclick="toggleTree(this)">2025 (1)</div>
+                    <ul class="nested">
+                        <li class="tree-item">
+                            <div class="tree-toggle" onclick="toggleTree(this)">December (1)</div>
+                            <ul class="nested">
+                                <li><a href="#" class="poem-link">Solstice Shadows</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </aside>
+
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Sidewalk Verses | Shorewood, Wisconsin</p>
+</footer>
+
+<script>
+    function toggleTree(element) {
+        element.parentElement.classList.toggle('open');
+    }
+</script>
+
+</body>
+</html>
