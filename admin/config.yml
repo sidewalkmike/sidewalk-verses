@@ -1,6 +1,6 @@
 backend:
-** name: git-gateway**
-** branch: main**
+name: git-gateway
+branch: main
 
 site_url: 
 
@@ -8,12 +8,16 @@ media_folder: "images"
 public_folder: "/images"
 
 collections:
-** - name: "verses"**
-** label: "Verses"**
-** folder: "verses"**
-** create: true**
-** slug: "{{year}}-{{month}}-{{day}}-{{slug}}"**
-** fields:**
-** - { label: "Title", name: "title", widget: "string" }**
-** - { label: "Publish Date", name: "date", widget: "datetime" }**
-** - { label: "Poem Text", name: "body", widget: "markdown" }**
+
+name: "verses"
+label: "Verses"
+folder: "verses"
+create: true
+slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+fields:
+
+{ label: "Title", name: "title", widget: "string" }
+
+{ label: "Publish Date", name: "date", widget: "datetime" }
+
+{ label: "Poem Text", name: "body", widget: "markdown" }
